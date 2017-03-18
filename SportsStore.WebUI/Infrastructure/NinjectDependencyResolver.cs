@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Moq;
 using Ninject;
+using SportsStore.Domain.Abstract;
+using SportsStore.Domain.Entities;
+using SportsStore.Domain.Concrete;
 
 namespace SportsStore.WebUI.Infrastructure
 {
@@ -31,6 +35,7 @@ namespace SportsStore.WebUI.Infrastructure
         private void AddBindings()
         {
             // add now bindings here:
+            kernal.Bind<IProductRepository>().To<EFProductRepository>();
 
         }
     }
